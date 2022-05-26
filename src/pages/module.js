@@ -20,7 +20,7 @@ export const GET_MODULE_AND_PARENT_TRACK = gql`
       modules {
         id
         title
-        length
+        durationInSeconds
       }
     }
   }
@@ -32,7 +32,7 @@ export const GET_MODULE_AND_PARENT_TRACK = gql`
  */
 const Module = ({ moduleId, trackId }) => {
   const { loading, error, data } = useQuery(GET_MODULE_AND_PARENT_TRACK, {
-    variables: { moduleId, trackId },
+    variables: { moduleId, trackId }
   });
 
   return (

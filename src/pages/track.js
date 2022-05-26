@@ -15,13 +15,13 @@ export const GET_TRACK = gql`
         photo
       }
       thumbnail
-      length
+      durationInSeconds
       modulesCount
       numberOfViews
       modules {
         id
         title
-        length
+        durationInSeconds
       }
       description
     }
@@ -34,7 +34,7 @@ export const GET_TRACK = gql`
  */
 const Track = ({ trackId }) => {
   const { loading, error, data } = useQuery(GET_TRACK, {
-    variables: { trackId },
+    variables: { trackId }
   });
 
   return (
